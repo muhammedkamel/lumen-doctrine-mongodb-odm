@@ -120,7 +120,7 @@ class DoctrineServiceProvider extends ServiceProvider
         $eventManager = new EventManager;
 
         $this->configureEventManager($doctrineConfig, $eventManager);
-        $connection = new Connection($connectionConfig['host'], [], $metadataConfiguration);
+        $connection = new Connection($connectionConfig['server'], $connectionConfig['options'], $metadataConfiguration);
 
         $documentManager = DocumentManager::create($connection, $metadataConfiguration, $eventManager);
 
