@@ -1,14 +1,14 @@
 <?php
 
-namespace Nord\Lumen\Doctrine\ODM\MongoDB\Traits;
+namespace MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Traits;
 
 use Closure;
-use Nord\Lumen\Doctrine\ODM\MongoDB\Domain\Model\DomainId;
+use MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Domain\Model\DomainId;
 
 /**
  * Class CreatesIdentities.
  *
- * @package Nord\Lumen\Doctrine\ODM\MongoDB\Traits
+ * @package MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Traits
  */
 trait CreatesIdentities
 {

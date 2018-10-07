@@ -1,8 +1,8 @@
-<?php namespace Nord\Lumen\Doctrine\ODM\MongoDD\Filters;
+<?php namespace MuhammedKamel\Lumen\Doctrine\ODM\MongoDD\Filters;
 
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Query\Filter\SQLFilter;
-use Nord\Lumen\Doctrine\ORM\Traits\SoftDeletes;
+use MuhammedKamel\Lumen\Doctrine\ORM\Traits\SoftDeletes;
 
 class TrashedFilter extends SQLFilter
 {
@@ -12,7 +12,7 @@ class TrashedFilter extends SQLFilter
      */
     public function addFilterConstraint(ClassMetadata $targetEntity, $targetTableAlias)
     {
-        if ( ! $this->isSoftDeletable($targetEntity->rootEntityName)) {
+        if (! $this->isSoftDeletable($targetEntity->rootEntityName)) {
             return '';
         }
 

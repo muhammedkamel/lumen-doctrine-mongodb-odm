@@ -1,14 +1,14 @@
 <?php
 
-namespace Nord\Lumen\Doctrine\ODM\MongoDB\Infrastructure\Types;
+namespace MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Infrastructure\Types;
 
 use Doctrine\ODM\MongoDB\Types\Type;
-use Nord\Lumen\Doctrine\ODM\MongoDB\Domain\Model\DomainId;
+use MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Domain\Model\DomainId;
 
 /**
  * Class DomainIdType.
  *
- * @package Nord\Lumen\Doctrine\ODM\MongoDB\Infrastructure\Types
+ * @package MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Infrastructure\Types
  */
 class DomainIdType extends Type
 {
@@ -34,7 +34,7 @@ class DomainIdType extends Type
      */
     public function closureToMongo()
     {
-        return '$return = new \Nord\Lumen\Doctrine\ODM\MongoDB\Domain\Model\DomainId($value);';
+        return '$return = new \MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Domain\Model\DomainId($value);';
     }
 
     /**
@@ -42,7 +42,6 @@ class DomainIdType extends Type
      */
     public function closureToPHP()
     {
-        return '$return = new \Nord\Lumen\Doctrine\ODM\MongoDB\Domain\Model\DomainId($value);';
+        return '$return = new \MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Domain\Model\DomainId($value);';
     }
-
 }

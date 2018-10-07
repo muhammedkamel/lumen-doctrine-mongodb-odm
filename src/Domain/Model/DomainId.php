@@ -1,13 +1,13 @@
 <?php
 
-namespace Nord\Lumen\Doctrine\ODM\MongoDB\Domain\Model;
+namespace MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Domain\Model;
 
 use Crisu83\ShortId\ShortId;
 
 /**
  * Class DomainId.
  *
- * @package Nord\Lumen\Core\Domain
+ * @package MuhammedKamel\Lumen\Core\Domain
  */
 class DomainId
 {

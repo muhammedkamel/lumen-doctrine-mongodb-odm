@@ -1,6 +1,6 @@
 <?php
 
-namespace Nord\Lumen\Doctrine\ODM\MongoDB\Config;
+namespace MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Config;
 
 use Exception;
 use Illuminate\Config\Repository as ConfigRepository;
@@ -8,7 +8,7 @@ use Illuminate\Config\Repository as ConfigRepository;
 /**
  * Class Config.
  *
- * @package Nord\Lumen\Doctrine\ODM\MongoDB\Config
+ * @package MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Config
  */
 class Config
 {
@@ -48,7 +48,7 @@ class Config
         */
 
         'types' => [
-            'short_id' => 'Nord\Lumen\Doctrine\ODM\MongoDB\Infrastructure\Types\ShortIdType',
+            'short_id' => 'MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Infrastructure\Types\ShortIdType',
         ],
         /*
         |--------------------------------------------------------------------------
@@ -176,11 +176,11 @@ class Config
      */
     public static function check(ConfigRepository $config)
     {
-        if ( ! isset($config[self::ODM_CONFIG_NAME])) {
+        if (! isset($config[self::ODM_CONFIG_NAME])) {
             throw new Exception('Doctrine ODM configuration not registered.');
         }
 
-        if ( ! isset($config[self::ODM_DB_CONFIG_NAME])) {
+        if (! isset($config[self::ODM_DB_CONFIG_NAME])) {
             throw new Exception('Database configuration not registered.');
         }
     }
@@ -246,4 +246,3 @@ class Config
         ];
     }
 }
-

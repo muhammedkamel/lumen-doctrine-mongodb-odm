@@ -17,9 +17,9 @@
  * <http://www.doctrine-project.org>.
  */
 
-namespace Nord\Lumen\Doctrine\ODM\MongoDB\Console\Command\ClearCache;
+namespace MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Console\Command\ClearCache;
 
-use Nord\Lumen\Doctrine\ODM\MongoDB\Console\Command\DoctrineCommand;
+use MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Console\Command\DoctrineCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -59,7 +59,7 @@ EOT
         $dm = $this->getDocumentManager();
         $cacheDriver = $dm->getConfiguration()->getMetadataCacheImpl();
 
-        if ( ! $cacheDriver) {
+        if (! $cacheDriver) {
             throw new \InvalidArgumentException('No Metadata cache driver is configured on given DocumentManager.');
         }
 

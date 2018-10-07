@@ -17,10 +17,10 @@
  * <http://www.doctrine-project.org>.
  */
 
-namespace Nord\Lumen\Doctrine\ODM\MongoDB\Console\Command\Schema;
+namespace MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Console\Command\Schema;
 
 use Doctrine\ODM\MongoDB\SchemaManager;
-use Nord\Lumen\Doctrine\ODM\MongoDB\Facades\DocumentManager;
+use MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Facades\DocumentManager;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Nord\Lumen\Doctrine\ODM\MongoDB\Traits;
+namespace MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Traits;
 
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\ODM\MongoDB\DocumentRepository;
@@ -8,7 +8,7 @@ use Doctrine\ODM\MongoDB\DocumentRepository;
 /**
  * Class ManagesDocuments.
  *
- * @package Nord\Lumen\Doctrine\ODM\MongoDB\Traits
+ * @package MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Traits
  */
 trait ManagesDocuments
 {

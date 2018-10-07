@@ -1,13 +1,13 @@
 <?php
 
-namespace Nord\Lumen\Doctrine\ODM\MongoDB\Infrastructure;
+namespace MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Infrastructure;
 
 use \Doctrine\ODM\MongoDB\DocumentRepository as BaseRepository;
 
 /**
  * Class DocumentRepository.
  *
- * @package Nord\Lumen\Doctrine\ODM\MongoDB\Infrastructure
+ * @package MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Infrastructure
  */
 class DocumentRepository extends BaseRepository
 {
@@ -35,5 +35,4 @@ class DocumentRepository extends BaseRepository
                          ->getQuery()
                          ->count();
     }
-
 }

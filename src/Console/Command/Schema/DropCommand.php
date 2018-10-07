@@ -17,7 +17,7 @@
  * <http://www.doctrine-project.org>.
  */
 
-namespace Nord\Lumen\Doctrine\ODM\MongoDB\Console\Command\Schema;
+namespace MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Console\Command\Schema;
 
 use Doctrine\ODM\MongoDB\SchemaManager;
 use Symfony\Component\Console\Input\InputInterface;

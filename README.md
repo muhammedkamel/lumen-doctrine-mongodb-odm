@@ -1,22 +1,22 @@
 # Lumen Doctrine MongoDB ODM
-[Doctrine MongoDB ODM](http://www.doctrine-project.org/projects/mongodb-odm.html) module for the [Lumen PHP framework](http://lumen.laravel.com/).
+[Doctrine MongoDB ODM](http://www.doctrine-project.org/projects/mongodb-odm.html) module for the [Lumen PHP framework](http://lumen.laravel.com/) Forked from (https://packagist.org/packages/nordsoftware/lumen-doctrine-mongodb-odm) package.
 
 ## Requirements
-- PHP >= 5.5
+- PHP >= 7.2
 
 ## Usage
 ### Install through Composer
 Run the following command to install the package:
 
 ```sh
-composer require nordsoftware/lumen-doctrine-mongodb-odm
+composer require muhammedkamel/lumen-doctrine-mongodb-odm
 ```
 
 ### Register the Service Provider
 Add the following line to `bootstrap/app.php`:
 
 ```php
-$app->register('Nord\Lumen\Doctrine\ODM\MongoDB\DoctrineServiceProvider');
+$app->register('MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\DoctrineServiceProvider');
 ```
 
 You can now use the `DocumentManager` facade where needed.

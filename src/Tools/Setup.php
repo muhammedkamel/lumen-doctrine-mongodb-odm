@@ -17,7 +17,7 @@
  * <http://www.doctrine-project.org>.
 */
 
-namespace Nord\Lumen\Doctrine\ODM\MongoDB\Tools;
+namespace MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Tools;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Cache\ArrayCache;

@@ -1,4 +1,4 @@
-<?php namespace Nord\Lumen\Doctrine\ODM\MongoDB;
+<?php namespace MuhammedKamel\Lumen\Doctrine\ODM\MongoDB;
 
 use Doctrine\Common\Cache\ApcCache;
 use Doctrine\Common\Cache\ApcuCache;
@@ -17,13 +17,13 @@ use Exception;
 use Illuminate\Config\Repository as ConfigRepository;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
-use Nord\Lumen\Doctrine\ODM\MongoDB\Config\Config;
-use Nord\Lumen\Doctrine\ODM\MongoDB\Tools\Setup;
+use MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Config\Config;
+use MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Tools\Setup;
 
 /**
  * Class DoctrineServiceProvider.
  *
- * @package Nord\Lumen\Doctrine\ODM\MongoDB
+ * @package MuhammedKamel\Lumen\Doctrine\ODM\MongoDB
  */
 class DoctrineServiceProvider extends ServiceProvider
 {
@@ -72,15 +72,15 @@ class DoctrineServiceProvider extends ServiceProvider
     protected function registerCommands()
     {
         $this->commands([
-            'Nord\Lumen\Doctrine\ODM\MongoDB\Console\Command\GenerateDocumentsCommand',
-            'Nord\Lumen\Doctrine\ODM\MongoDB\Console\Command\GenerateHydratorsCommand',
-            'Nord\Lumen\Doctrine\ODM\MongoDB\Console\Command\GenerateProxiesCommand',
-            'Nord\Lumen\Doctrine\ODM\MongoDB\Console\Command\GenerateRepositoriesCommand',
-            'Nord\Lumen\Doctrine\ODM\MongoDB\Console\Command\QueryCommand',
-            'Nord\Lumen\Doctrine\ODM\MongoDB\Console\Command\ClearCache\MetadataCommand',
-            'Nord\Lumen\Doctrine\ODM\MongoDB\Console\Command\Schema\CreateCommand',
-            'Nord\Lumen\Doctrine\ODM\MongoDB\Console\Command\Schema\DropCommand',
-            'Nord\Lumen\Doctrine\ODM\MongoDB\Console\Command\Schema\UpdateCommand',
+            'MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Console\Command\GenerateDocumentsCommand',
+            'MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Console\Command\GenerateHydratorsCommand',
+            'MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Console\Command\GenerateProxiesCommand',
+            'MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Console\Command\GenerateRepositoriesCommand',
+            'MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Console\Command\QueryCommand',
+            'MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Console\Command\ClearCache\MetadataCommand',
+            'MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Console\Command\Schema\CreateCommand',
+            'MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Console\Command\Schema\DropCommand',
+            'MuhammedKamel\Lumen\Doctrine\ODM\MongoDB\Console\Command\Schema\UpdateCommand',
         ]);
     }
 
@@ -106,8 +106,14 @@ class DoctrineServiceProvider extends ServiceProvider
         $simpleAnnotations = array_get($doctrineConfig, 'simple_annotations', false);
         $cache             = $this->configureCache($doctrineConfig);
 
-        $metadataConfiguration = $this->createMetadataConfiguration($type, $paths, $debug, $proxyDir, $cache,
-            $simpleAnnotations);
+        $metadataConfiguration = $this->createMetadataConfiguration(
+            $type,
+            $paths,
+            $debug,
+            $proxyDir,
+            $cache,
+            $simpleAnnotations
+        );
 
         $this->configureMetadataConfiguration($metadataConfiguration, $doctrineConfig, $databaseConfig);
 
@@ -147,8 +153,13 @@ class DoctrineServiceProvider extends ServiceProvider
     ) {
         switch ($type) {
             case self::METADATA_ANNOTATIONS:
-                return Setup::createAnnotationMetadataConfiguration($paths, $isDevMode, $proxyDir, $cache,
-                    $useSimpleAnnotationReader);
+                return Setup::createAnnotationMetadataConfiguration(
+                    $paths,
+                    $isDevMode,
+                    $proxyDir,
+                    $cache,
+                    $useSimpleAnnotationReader
+                );
             case self::METADATA_XML:
                 return Setup::createXMLMetadataConfiguration($paths, $isDevMode, $proxyDir, $cache);
             case self::METADATA_YAML:
@@ -189,7 +200,7 @@ class DoctrineServiceProvider extends ServiceProvider
             }
         }
 
-        if ( ! empty($doctrineConfig['repository'])) {
+        if (! empty($doctrineConfig['repository'])) {
             $configuration->setDefaultRepositoryClassName($doctrineConfig['repository']);
         }
 
@@ -205,10 +216,9 @@ class DoctrineServiceProvider extends ServiceProvider
                 $configuration->setAutoGenerateHydratorClasses($doctrineConfig['hydrator']['auto_generate']);
             }
         }
-        if ( ! empty($databaseConfig['connections'][$databaseConfig['default']]['database'])) {
+        if (! empty($databaseConfig['connections'][$databaseConfig['default']]['database'])) {
             $configuration->setDefaultDB($databaseConfig['connections'][$databaseConfig['default']]['database']);
         }
-
     }
 
     /**
@@ -236,7 +246,7 @@ class DoctrineServiceProvider extends ServiceProvider
     {
         if (isset($doctrineConfig['filters'])) {
             foreach ($doctrineConfig['filters'] as $name => $filter) {
-                if ( ! array_get($filter, 'enabled', false)) {
+                if (! array_get($filter, 'enabled', false)) {
                     continue;
                 }
                 $documentManager->getFilterCollection()->enable($name);
@@ -246,7 +256,7 @@ class DoctrineServiceProvider extends ServiceProvider
         // @see http://doctrine-mongodb-odm.readthedocs.org/en/latest/reference/basic-mapping.html#custom-mapping-types
         if (isset($doctrineConfig['types'])) {
             foreach ($doctrineConfig['types'] as $name => $className) {
-                if ( ! Type::hasType($name)) {
+                if (! Type::hasType($name)) {
                     Type::addType($name, $className);
                 } else {
                     Type::overrideType($name, $className);
