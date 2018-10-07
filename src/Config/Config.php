@@ -244,12 +244,12 @@ class Config
             'username' => $dbConfig['username'],
             'password' => $dbConfig['password']
             ],
-            $dbConfig['options']
+            $dbConfig['options'] ?? []
         );
 
         return [
             'server'     => $server,
-            'options'     => $options
+            'options'    => $options
         ];
     }
 }
